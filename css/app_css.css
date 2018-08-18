@@ -1,0 +1,198 @@
+body{padding:0;margin:0;font:14px Verdana, sans-serif;background:#000 url("../images/bg.png");background-attachment:fixed;}
+header{background:#a1a1a1;padding:10px 0;box-shadow:0 1px 5px 3px #d2d2d2;-webkit-box-shadow:0 1px 5px 3px #d2d2d2;
+    -moz-box-shadow:0 1px 5px 3px #d2d2d2;position:fixed;top:0;left:0;right:0;width:100%;z-index:1000}
+footer{background:#f7f7f7;padding:15px 0;text-align: center;}
+section{padding:30px 0 90px 0;}
+input{font:12px Verdana, sans-serif;}
+h1, h2{font:25px Tahoma;padding:0;margin:0;}
+h2{font-size:20px;}
+.Absolute{position:absolute;}
+.MarginAuto{margin:0 auto;}
+.AlignCenter{text-align:center;}
+.Transition{-webkit-transition:all 0.6s;transition: all 0.6s;-moz-transition: all 0.6s;-o-transition: all 0.6s;}
+.Pointer{cursor:pointer;}
+.SiteWidth{width:1000px;}
+.Hide{display:none;}
+.Flex{display:flex;}
+.Left{float:left;}
+.Clear{clear:both;}
+.Picture img{width:100%;display:block;}
+.Table{display:table;}
+.TableCell{display:table-cell;}
+.Logo{font:32px Tahoma;text-transform:uppercase;}
+.Logo img{display:block;}
+#LightBox{top:0;bottom:0;right:0;left:0;background:#000;align-items:center;color:#fff;z-index:10;}
+#LightBox .Content{width:500px;}
+.ButtonBox{font-size:16px;padding:20px 0;}
+.ButtonBox input{color:#fff;background:#de1018;border:0;padding:10px 20px;font-size:16px;border-radius:6px;
+    -moz-border-radius:6px;-webkit-border-radius:6px;}
+.ButtonBox input:hover{background:#666;}
+#Message{border:1px solid #fff;font-size:20px;padding:20px;background:#666;margin:20px 0;}
+#Message.Error{background:#de1018;}
+#Message.Loading{background-image:url("../images/loading.gif");background-repeat:no-repeat;background-position:left 20px center;
+    padding-left:70px;}
+.ContentData{padding-top:20px;}
+#LightBox{top:0;bottom:0;right:0;left:0;background:#000;align-items:center;color:#fff;z-index:10;}
+#LightBox .Content{width:500px;}
+.ButtonBox{font-size:16px;padding:20px 0;}
+.ButtonBox input{color:#fff;background:#de1018;border:0;padding:10px 20px;font-size:16px;border-radius:6px;
+    -moz-border-radius:6px;-webkit-border-radius:6px;}
+.ButtonBox input:hover{background:#666;}
+#Message{border:1px solid #fff;font-size:20px;padding:20px;background:#666;margin:20px 0;}
+#Message.Error{background:#de1018;}
+#Message.Loading{background-image:url("../images/loading.gif");background-repeat:no-repeat;background-position:left 20px center;
+    padding-left:70px;}
+.container-wrapper{padding:40px 0;background:url("../images/wallpaper.jpg")no-repeat;display:flex;height:100%;background-size:cover;width:100%;padding-top:140px}
+#message{background:#de1018;color:#fff;font-size:25px;padding:20px;opacity:0;}
+.item{
+    display:block;
+    margin-bottom:30px;
+    background:#f1f1f1;
+    box-shadow: 2px 2px 4px 2px #000000;
+    -webkit-box-shadow: 2px 2px 4px 2px #000000;
+    -moz-box-shadow: 2px 2px 4px 2px #000000;
+    -webkit-transition:all 0.3s;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    color:#000000}
+.item:visited{color:#000000}
+
+.clearfix:after{
+    content:"";
+    clear:both;
+}
+.item h2{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100px;
+    padding:10px;
+    text-align:center;
+    font-size:25px;
+    border-top: 2px solid #000;
+}
+.item:hover{text-decoration:none;color:#eb2328;box-shadow:4px 4px 6px 4px #000;-webkit-box-shadow:4px 4px 6px 4px #000;-moz-box-shadow:4px 4px 6px 4px #000;}
+
+#picture img{display:block;max-width:100%}
+
+
+#myInput {
+    background-image: url('../images/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#loader-wrapper{
+    position:fixed;
+    background:#000;
+    top:0;
+    height:100%;
+    width:100%;
+    transition: all 0.3s 1s ease-out;
+    -moz-transition: all 0.3s 1s ease-out;
+    -o-transition: all 0.3s 1s ease-out;}
+
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+    z-index: 1001;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 }
+    to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+    from{ bottom:-100px; opacity:0 }
+    to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
