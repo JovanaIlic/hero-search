@@ -1,4 +1,12 @@
-document.addEventListener("DOMContentLoaded", bindButtons);
+//document.addEventListener("DOMContentLoaded", bindButtons);
+
+window.onload = function()
+{
+  bindButtons();
+
+
+
+}
 var apiKey = "d0b3da6fa1663047e4000bd33c866bc1";
 var myVar;
 
@@ -19,11 +27,10 @@ function myFunction() {
         }
          else
         {
-            b[i].style.display = "none";
+            c.style.display = "none";
 
 
         }
-
     }
 }
 
@@ -36,6 +43,13 @@ function showPage() {
 }
 
 
+function showLoader() {
+
+    document.getElementById("loader-wrapper").style.display = "block";
+    document.getElementById("myDiv").style.display = "none";
+    document.getElementById('myInput').value = '';
+
+}
 
 
 function bindButtons(event)
@@ -43,8 +57,23 @@ function bindButtons(event)
 
 
     var req = new XMLHttpRequest();
-    var website = 'https://gateway.marvel.com/v1/public/characters?'
-    var web = website + 'ts=1534583810257&apikey=' + apiKey + "&hash=f746bdd4e37d44e8f49de8cfa4d202d7" ;
+    var website = 'https://gateway.marvel.com/v1/public/characters?';
+    var limit = 12;
+
+    if(event)
+    {
+      var  page = event;
+    }
+    else
+    {
+        var page = 1;
+    }
+
+    var ofset = (page - 1)*limit ;
+
+    console.log(page);
+
+    var web = website + 'limit=' + limit + '&offset=' + ofset + '&ts=1534583810257&apikey=' + apiKey + "&hash=f746bdd4e37d44e8f49de8cfa4d202d7" ;
 
 
     req.open('GET', web, true);
@@ -54,14 +83,49 @@ function bindButtons(event)
         if(req.status >= 200 && req.status < 400)
         {
             var result = JSON.parse(req.responseText);
+            var div1 = document.getElementById('row');
 
-             for (var i = 0; i <= result.data.results.length-1; i++) {
+            var totalNumberOfItems = result.data.total;
+            var totalNumberOfPages = Math.round(totalNumberOfItems/limit);
+            totalNumberOfPages += 1
+            if(!event) {
+
+                $(".pagination").append("<li class='current-page active' ><a href='javascript:void(0)'>" + 1 + "</a></li>");
+
+
+                for (var b = 2; b <= totalNumberOfPages; b++) {
+
+                    $(".pagination").append("<li class='current-page' ><a href='javascript:void(0)'>" + b + "</a></li>");
+
+                }
+
+                $(".pagination li.current-page").on("click", function () {
+                    if ($(this).hasClass("active")) {
+                        return false;
+                    }
+                    else {
+
+                        var currentPage = $(this).index();
+
+                        $(".pagination li").removeClass("active");
+                        $(this).addClass("active");
+
+                        bindButtons(currentPage);
+
+                        document.getElementById("row").textContent = "";
+                        myVar = setTimeout(showLoader, 500);
+                    }
+
+                });
+            }
+
+            for (var i = 0; i <= result.data.results.length-1; i++) {
 
                  var value = result.data.results[i];
 
-                 var div1 = document.getElementById('row');
+
                  var col2 = document.createElement("DIV") ;
-                 col2.setAttribute("class", "col-xs-12 col-sm-6 col-md-3 col-xsl-half");
+                 col2.setAttribute("class", "col-xs-12 col-sm-6 col-md-3 col-xsl-half list-group");
 
 
                  var div2 = document.createElement("a") ;
@@ -98,10 +162,19 @@ function bindButtons(event)
         }
 
 
-         event.preventDefault();
+
 
     });
+
     req.send(null);
 
 
 }
+
+
+
+
+
+
+
+

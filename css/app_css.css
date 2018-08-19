@@ -17,27 +17,8 @@ h2{font-size:20px;}
 .Left{float:left;}
 .Clear{clear:both;}
 .Picture img{width:100%;display:block;}
-.Table{display:table;}
-.TableCell{display:table-cell;}
-.Logo{font:32px Tahoma;text-transform:uppercase;}
-.Logo img{display:block;}
-#LightBox{top:0;bottom:0;right:0;left:0;background:#000;align-items:center;color:#fff;z-index:10;}
-#LightBox .Content{width:500px;}
-.ButtonBox{font-size:16px;padding:20px 0;}
-.ButtonBox input{color:#fff;background:#de1018;border:0;padding:10px 20px;font-size:16px;border-radius:6px;
-    -moz-border-radius:6px;-webkit-border-radius:6px;}
-.ButtonBox input:hover{background:#666;}
-#Message{border:1px solid #fff;font-size:20px;padding:20px;background:#666;margin:20px 0;}
-#Message.Error{background:#de1018;}
-#Message.Loading{background-image:url("../images/loading.gif");background-repeat:no-repeat;background-position:left 20px center;
-    padding-left:70px;}
-.ContentData{padding-top:20px;}
-#LightBox{top:0;bottom:0;right:0;left:0;background:#000;align-items:center;color:#fff;z-index:10;}
-#LightBox .Content{width:500px;}
-.ButtonBox{font-size:16px;padding:20px 0;}
-.ButtonBox input{color:#fff;background:#de1018;border:0;padding:10px 20px;font-size:16px;border-radius:6px;
-    -moz-border-radius:6px;-webkit-border-radius:6px;}
-.ButtonBox input:hover{background:#666;}
+
+
 #Message{border:1px solid #fff;font-size:20px;padding:20px;background:#666;margin:20px 0;}
 #Message.Error{background:#de1018;}
 #Message.Loading{background-image:url("../images/loading.gif");background-repeat:no-repeat;background-position:left 20px center;
@@ -195,4 +176,33 @@ h2{font-size:20px;}
 #myDiv {
     display: none;
     text-align: center;
+}
+
+.current-page.active a{color:#de1018}
+.pagination{flex-wrap:wrap;}
+.pagination li a{padding: 6px 0;
+    margin-left: -1px;
+    margin-top: -1px;
+    line-height: 1.42857143;
+    color: #fff;
+    text-decoration: none;
+    background-color: #a1a1a1;
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-right-color: rgb(221, 221, 221);
+    border-bottom-color: rgb(221, 221, 221);
+    border-left-color: rgb(221, 221, 221);
+    width: 40px;
+    display: block;}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover, .pagination li.active a {
+    z-index: 2;
+    color: #de1018;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+@media only screen and (max-width:578px)
+{
+    .item{width:300px;margin:0 auto 30px auto}
 }
